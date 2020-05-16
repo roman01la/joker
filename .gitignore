@@ -1,5 +1,4 @@
 joker
-joker.wasm*
 .vscode
 .idea
 core/a_*.go
