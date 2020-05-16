@@ -3,7 +3,7 @@ package bolt
 import (
 	"bytes"
 	. "github.com/candid82/joker/core"
-	bolt "go.etcd.io/bbolt"
+	bolt "github.com/roman01la/bbolt"
 	"os"
 	"unsafe"
 )
