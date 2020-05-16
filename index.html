@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+      }
+      .line {
+        font: normal 16px monospace;
+        margin: 8px 0;
+      }
+      #stdout {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stdout">
+      <div class="line">Initializing...</div>
+    </div>
+    <script src="wasm_exec.js"></script>
+    <script>
+      function writeSyncProvided(str) {
+        const node = document.createElement("div");
+        node.classList.add("line");
+        node.textContent = str;
+        window.stdout.append(node);
+      }
+    </script>
+    <script>
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("joker.wasm"),
+        go.importObject
+      ).then((result) => {
+        const expr = prompt("Enter Clojure expression to eval");
+        if (expr) {
+          go.argv.push("--eval", expr);
+          go.run(result.instance);
+        }
+      });
+    </script>
+  </body>
+</html>
