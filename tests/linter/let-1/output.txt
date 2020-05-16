@@ -1,1 +1,0 @@
-tests/linter/let-1/input.clj:1:7: Exception: Unsupported binding form: sdf

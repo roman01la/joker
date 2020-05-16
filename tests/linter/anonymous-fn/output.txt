@@ -1,1 +1,0 @@
-tests/linter/anonymous-fn/input.clj:2:13: Read error: Arg literal must be %, %& or %integer

@@ -1,2 +1,0 @@
-tests/linter/if/input.clj:8:1: Parse warning: missing else branch
-tests/linter/if/input.clj:9:1: Parse warning: missing else branch

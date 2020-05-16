@@ -1,1 +1,0 @@
-(joker.string/split "ha-ha-ha-ha" #"-")

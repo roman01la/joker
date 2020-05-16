@@ -1,3 +1,0 @@
-(def *known-macros*
-  (merge {'joker.test/deftest nil 'joker.test/is nil 'joker.test/are nil}
-         (:known-macros joker.core/*linter-config*)))

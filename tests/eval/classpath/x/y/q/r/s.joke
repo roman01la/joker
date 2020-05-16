@@ -1,3 +1,0 @@
-(ns q.r.s)
-
-(println "this is x/y/q/r/s.joke")
