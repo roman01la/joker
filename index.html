@@ -33,7 +33,7 @@
     <script>
       const go = new Go();
       WebAssembly.instantiateStreaming(
-        fetch("./joker.wasm"),
+        fetch("joker/joker.wasm"),
         go.importObject
       ).then((result) => {
         const expr = prompt("Enter Clojure expression to eval");
