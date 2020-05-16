@@ -32,16 +32,16 @@
     </script>
     <script>
       const go = new Go();
-      fetch("/joker/joker.wasm")
-        .then((r) => r.arrayBuffer())
-        .then((bytes) => WebAssembly.instantiate(bytes, go.importObject))
-        .then((result) => {
-          const expr = prompt("Enter Clojure expression to eval");
-          if (expr) {
-            go.argv.push("--eval", expr);
-            go.run(result.instance);
-          }
-        });
+      WebAssembly.instantiateStreaming(
+        fetch("/joker/joker.wasm"),
+        go.importObject
+      ).then((result) => {
+        const expr = prompt("Enter Clojure expression to eval");
+        if (expr) {
+          go.argv.push("--eval", expr);
+          go.run(result.instance);
+        }
+      });
     </script>
   </body>
 </html>
